@@ -55,7 +55,7 @@ def main():
     dispatcher.add_handler(CommandHandler("stkrs", sticker_image_search))
     dispatcher.add_handler(CommandHandler("imgs", image_search_link))
     dispatcher.add_handler(CommandHandler("gifs", gif_image_search))
-    dispatcher.add_handler(MessageHandler(Filters.command, unknown))
+    #dispatcher.add_handler(MessageHandler(Filters.command, unknown))
 
     # log all errors
     dispatcher.add_error_handler(error)
