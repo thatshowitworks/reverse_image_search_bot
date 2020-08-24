@@ -47,14 +47,14 @@ def main():
 
     dispatcher.add_handler(CommandHandler("start", start))
     dispatcher.add_handler(CommandHandler("help", start))
-    dispatcher.add_handler(CommandHandler('restart', restart, filters=Filters.user(username='@Nachtalb')))
+    dispatcher.add_handler(CommandHandler('restart', restart, filters=Filters.user(username='@okay_retard')))
     dispatcher.add_handler(CommandHandler('reply_search', group_image_reply_search))
     dispatcher.add_handler(CommandHandler('best_match', best_match, pass_args=True))
     dispatcher.add_handler(CallbackQueryHandler(callback_best_match))
 
-    dispatcher.add_handler(MessageHandler(Filters.sticker, sticker_image_search))
-    dispatcher.add_handler(MessageHandler(Filters.photo, image_search_link))
-    dispatcher.add_handler(MessageHandler(Filters.video | Filters.document, gif_image_search))
+    dispatcher.add_handler(CommandHandler("stkrs", sticker_image_search))
+    dispatcher.add_handler(CommandHandler("imgs", image_search_link))
+    dispatcher.add_handler(CommandHandler("gifs", gif_image_search))
     dispatcher.add_handler(MessageHandler(Filters.command, unknown))
 
     # log all errors
